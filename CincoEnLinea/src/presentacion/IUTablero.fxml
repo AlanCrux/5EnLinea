@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -34,8 +33,11 @@
             <Font name="Proxima Nova Alt Rg Bold" size="26.0" />
          </font>
       </Label>
-      <TextField fx:id="tfTurno" editable="false" layoutX="530.0" layoutY="205.0" prefHeight="45.0" prefWidth="200.0" />
-      <GridPane fx:id="gridTablero" gridLinesVisible="true" layoutX="76.0" layoutY="90.0" AnchorPane.bottomAnchor="100.0" AnchorPane.topAnchor="100.0">
+      <TextField fx:id="tfTurno" alignment="CENTER" editable="false" layoutX="530.0" layoutY="205.0" prefHeight="45.0" prefWidth="200.0" style="-fx-text-fill: #3498DB;" text="AlanCrux">
+         <font>
+            <Font name="Proxima Nova ScOsf Th Regular" size="22.0" />
+         </font></TextField>
+      <GridPane fx:id="gridTablero" gridLinesVisible="true" layoutX="76.0" layoutY="90.0" style="-fx-background-color: #2ECC71;" AnchorPane.bottomAnchor="100.0" AnchorPane.topAnchor="100.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="40.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="40.0" />
@@ -61,111 +63,111 @@
           <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="1" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="2" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="3" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="4" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="5" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="6" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="7" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="8" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="9" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.rowIndex="1" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="6" GridPane.rowIndex="1" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="7" GridPane.rowIndex="1" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="8" GridPane.rowIndex="1" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="9" GridPane.rowIndex="1" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.rowIndex="2" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="6" GridPane.rowIndex="2" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="7" GridPane.rowIndex="2" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="8" GridPane.rowIndex="2" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="9" GridPane.rowIndex="2" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.rowIndex="3" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="6" GridPane.rowIndex="3" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="7" GridPane.rowIndex="3" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="8" GridPane.rowIndex="3" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="9" GridPane.rowIndex="3" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.rowIndex="4" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="4" GridPane.rowIndex="4" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="5" GridPane.rowIndex="4" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="6" GridPane.rowIndex="4" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="7" GridPane.rowIndex="4" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="8" GridPane.rowIndex="4" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="9" GridPane.rowIndex="4" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.rowIndex="5" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="4" GridPane.rowIndex="5" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="5" GridPane.rowIndex="5" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="6" GridPane.rowIndex="5" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="7" GridPane.rowIndex="5" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="8" GridPane.rowIndex="5" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="9" GridPane.rowIndex="5" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.rowIndex="6" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="3" GridPane.rowIndex="6" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="4" GridPane.rowIndex="6" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="5" GridPane.rowIndex="6" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="6" GridPane.rowIndex="6" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="7" GridPane.rowIndex="6" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="8" GridPane.rowIndex="6" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="9" GridPane.rowIndex="6" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.rowIndex="7" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="2" GridPane.rowIndex="7" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="3" GridPane.rowIndex="7" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="4" GridPane.rowIndex="7" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="5" GridPane.rowIndex="7" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="6" GridPane.rowIndex="7" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="7" GridPane.rowIndex="7" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="8" GridPane.rowIndex="7" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="9" GridPane.rowIndex="7" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.rowIndex="8" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="2" GridPane.rowIndex="8" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="3" GridPane.rowIndex="8" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="4" GridPane.rowIndex="8" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="5" GridPane.rowIndex="8" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="6" GridPane.rowIndex="8" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="7" GridPane.rowIndex="8" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="8" GridPane.rowIndex="8" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="9" GridPane.rowIndex="8" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.rowIndex="9" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="2" GridPane.rowIndex="9" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="3" GridPane.rowIndex="9" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="4" GridPane.rowIndex="9" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="5" GridPane.rowIndex="9" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="6" GridPane.rowIndex="9" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="7" GridPane.rowIndex="9" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="8" GridPane.rowIndex="9" />
-            <JFXButton onAction="#ponerFicha" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2ECC71;" text=" " GridPane.columnIndex="9" GridPane.rowIndex="9" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="3" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="5" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="6" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="6" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="7" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="7" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="8" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="8" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="8" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="9" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="9" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="9" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseEntered="#efectoMouseSobre" onMouseExited="#efectoMouseFuera" onMouseReleased="#ponerFicha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="9" />
          </children>
       </GridPane>
       <ImageView fx:id="imageTurno" fitHeight="40.0" fitWidth="40.0" layoutX="628.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../recursos/iconos/Emoji_u1f430.svg.png" />
+            <Image url="@../recursos/iconos/conejo.png" />
          </image>
       </ImageView>
       <Hyperlink fx:id="hpRendirse" layoutX="594.0" layoutY="395.0" text="Rendirse">
@@ -173,5 +175,105 @@
             <Font name="Proxima Nova Alt Rg Regular" size="16.0" />
          </font>
       </Hyperlink>
+      <Label fx:id="etiquetaA" layoutX="91.0" layoutY="72.0" text="A" textFill="#041e03">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiquetaB" layoutX="131.0" layoutY="72.0" text="B" textFill="#041e03">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiquetaC" layoutX="172.0" layoutY="72.0" text="C" textFill="#041e03">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiquetaD" layoutX="210.0" layoutY="72.0" text="D" textFill="#041e03">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiquetaE" layoutX="252.0" layoutY="72.0" text="E" textFill="#041e03">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiquetaF" layoutX="291.0" layoutY="72.0" text="F" textFill="#041e03">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiquetaG" layoutX="330.0" layoutY="72.0" text="G" textFill="#041e03">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiquetaH" layoutX="370.0" layoutY="72.0" text="H" textFill="#041e03">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiquetaI" layoutX="412.0" layoutY="72.0" text="I" textFill="#041e03">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiquetaJ" layoutX="452.0" layoutY="72.0" text="J" textFill="#041e03">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiqueta1" layoutX="50.0" layoutY="111.0" text="1" textFill="#0a0101">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiqueta2" layoutX="50.0" layoutY="149.0" text="2" textFill="#0a0101">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiqueta3" layoutX="50.0" layoutY="189.0" text="3" textFill="#0a0101">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiqueta4" layoutX="50.0" layoutY="231.0" text="4" textFill="#0a0101">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiqueta5" layoutX="50.0" layoutY="270.0" text="5" textFill="#0a0101">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiqueta6" layoutX="50.0" layoutY="310.0" text="6" textFill="#0a0101">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiqueta7" layoutX="50.0" layoutY="349.0" text="7" textFill="#0a0101">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiqueta8" layoutX="50.0" layoutY="389.0" text="8" textFill="#0a0101">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiqueta9" layoutX="50.0" layoutY="430.0" text="9" textFill="#0a0101">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="etiqueta10" layoutX="46.0" layoutY="470.0" text="10" textFill="#0a0101">
+         <font>
+            <Font name="Proxima Nova Alt Rg Bold" size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
