@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -17,10 +18,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+import logica.ControlTablero;
 
 /**
  * Controlador del tablero
  *
+ * @author Miguel Alejandro Cámara
  * @author Alan Yoset García C
  */
 public class IUTableroController implements Initializable {
@@ -40,7 +43,10 @@ public class IUTableroController implements Initializable {
     private boolean turno; 
     
     private String fichaUno; //Para guardar la selección de ficha del jugador uno.
-    private String fichaDos; //Para guardar la selección de ficha del jugador dos. 
+    private String fichaDos; //Para guardar la selección de ficha del jugador dos.
+    
+    ControlTablero control = new ControlTablero();
+    
     /**
      * Inicializa los componentes del tablero. 
      */
@@ -49,14 +55,29 @@ public class IUTableroController implements Initializable {
         iniciarCronometro();
     }  
     
-    @FXML
-    public void ponerFicha(MouseEvent event) {
-        ImageView ficha = (ImageView) event.getSource();
-        if (turno) {
-            ficha.setImage(new Image ("/recursos/iconos/conejo.png"));
-            turno = false; 
-        } else{
-            ficha.setImage(new Image ("/recursos/iconos/dinosaurio.png"));
+  @FXML
+  public void ponerFicha(MouseEvent event) {
+    ImageView ficha = (ImageView) event.getSource();
+    Node nodo = (Node) event.getSource();
+
+    Integer x = GridPane.getColumnIndex(nodo);
+    Integer y = GridPane.getRowIndex(nodo);
+
+    //-----PARCHE FEO :V -- por alguna razón los métodos anteriores dan null cuando deberían dar 0
+    if (x == null) {
+      x = 0;
+    }
+    if (y == null) {
+      y = 0;
+    }
+    
+    control.agregarPosición(y, x, turno);
+    
+    if (turno) {
+      ficha.setImage(new Image("/recursos/iconos/conejo.png"));
+      turno = false;
+    } else {
+      ficha.setImage(new Image ("/recursos/iconos/dinosaurio.png"));
             turno = true;
         }
         

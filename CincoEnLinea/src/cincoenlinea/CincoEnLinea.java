@@ -2,21 +2,16 @@
 package cincoenlinea;
 
 import java.io.IOException;
-import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
- *
+ * @author Miguel Alejandro Cámara
  * @author Alan Yoset García C
  */
 public class CincoEnLinea extends Application {
@@ -37,7 +32,6 @@ public class CincoEnLinea extends Application {
     
     public void showMainWindows() {
         AnchorPane rootPane = new AnchorPane();
-        //ResourceBundle bundle = ResourceBundle.getBundle("resources/languages.language");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/presentacion/IUTablero.fxml"));
 
         try {
