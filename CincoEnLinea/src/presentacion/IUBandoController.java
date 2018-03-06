@@ -35,11 +35,19 @@ public class IUBandoController implements Initializable {
   public void initialize(URL url, ResourceBundle rb) {
     botonHoja.setOnAction(event->{
       bando = "Conejo"; 
+      botonHoja.setStyle("-fx-background-color: transparent");
+      botonCarne.setStyle("-fx-background-color: gray");
+      botonCarne.setOpacity(0.8);
+      botonHoja.setOpacity(1);
       botonIniciar.setDisable(false);
     });
     
     botonCarne.setOnAction(event->{
+      botonHoja.setOpacity(0.8);
+      botonCarne.setOpacity(1);
+      botonCarne.setStyle("-fx-background-color: transparent");
       bando = "Dinosaurio";
+      botonHoja.setStyle("-fx-background-color: gray");
       botonIniciar.setDisable(false);
     });
     

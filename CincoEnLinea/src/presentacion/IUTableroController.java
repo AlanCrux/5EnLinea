@@ -149,6 +149,7 @@ public class IUTableroController implements Initializable {
       public void handle(ActionEvent event) {
         if (RELOJ_TURNO > 9) {
           lbTiempo.setText("00:" + RELOJ_TURNO);
+          lbTiempo.setTextFill(Color.web("black"));
         } else if(RELOJ_TURNO > 0){
           lbTiempo.setText("00:0" + RELOJ_TURNO);
           lbTiempo.setTextFill(Color.web("#EC7063"));
@@ -202,7 +203,7 @@ public class IUTableroController implements Initializable {
     if (turno) {
       mostrarGanador("Dinosaurio");
     } else {
-      mostrarGanador("Dinosaurio");
+      mostrarGanador("Conejo");
     }
   }
   
