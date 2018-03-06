@@ -1,5 +1,6 @@
 package presentacion;
 
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.KeyFrame;
@@ -8,7 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -19,6 +19,19 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import logica.ControlTablero;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import presentacion.utilerias.Mensajes;
 
 /**
  * Controlador del tablero
@@ -28,41 +41,62 @@ import logica.ControlTablero;
  */
 public class IUTableroController implements Initializable {
 
-    @FXML
-    private Label lbTiempo;
-    @FXML
-    private TextField tfTurno;
-    @FXML
-    private GridPane gridTablero;
-    @FXML
-    private ImageView imageTurno;
-    @FXML
-    private Hyperlink hpRendirse;
-    
-    private int DURACION_TURNO = 30; 
-    private boolean turno; 
-    
-    private String fichaUno; //Para guardar la selección de ficha del jugador uno.
-    private String fichaDos; //Para guardar la selección de ficha del jugador dos.
-    
-    ControlTablero control = new ControlTablero();
-    
-    /**
-     * Inicializa los componentes del tablero. 
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        iniciarCronometro();
-    }  
-    
+  @FXML
+  private Label lbTiempo;
+  @FXML
+  private TextField tfTurno;
+  @FXML
+  private GridPane gridTablero;
+  @FXML
+  private ImageView imageTurno;
+  @FXML
+  private Hyperlink hpRendirse;
+
+  private int RELOJ_TURNO = 5;
+  private final int LIMITE_TURNO = 5; 
+
+  private final String SONIDO_FIN_TURNO = "../recursos/sonidos/timer_3beeps.mp3";
+  private final String FICHA_CONEJO = "/recursos/iconos/conejo.png";
+  private final String FICHA_DINOSAURIO = "/recursos/iconos/dinosaurio.png";
+  private final String FICHA_CONEJO_TRANSPARENTE = "/recursos/iconos/conejo_transparente.png";
+  private final String FICHA_DINOSAURIO_TRANSPARENTE = "/recursos/iconos/dinosaurio_transparente.png";
+  
+  private boolean turno; //Si es falso es dinosaurio, si es verdadero es conejo. 
+  ControlTablero control = new ControlTablero();
+  
+  private Timeline cronometro; 
+  /*Para cuando se implemente inteligencia, el usuario selecciona su ficha.
+   *Por ahora recibe la entrada de la primera ficha. */
+  
+  private String fichaUsuario = "Dinosaurio"; //Almacena la ficha elegida por el jugador
+  private String jugador1; //Almacena el nombre del jugador
+  
+  private final String jugadorPC = "IA PC";
+  /**
+   * Inicializa los componentes del tablero.
+   */
+  @Override
+  public void initialize(URL url, ResourceBundle rb) {
+    turno = fichaUsuario.equals("Conejo"); //Si es conejo el turno va a iniciar como true
+    if (turno) {
+      imageTurno.setImage(new Image(FICHA_CONEJO));
+    } else{
+      imageTurno.setImage(new Image(FICHA_DINOSAURIO));
+    } 
+    iniciarCronometro();
+    tfTurno.setText(jugador1);
+    hpRendirse.setOnAction(event->{
+      rendirse(turno);
+    });
+  }
+
   @FXML
   public void ponerFicha(MouseEvent event) {
     ImageView ficha = (ImageView) event.getSource();
-    Node nodo = (Node) event.getSource();
 
-    Integer x = GridPane.getColumnIndex(nodo);
-    Integer y = GridPane.getRowIndex(nodo);
-
+    Integer x = GridPane.getColumnIndex(ficha);
+    Integer y = GridPane.getRowIndex(ficha);
+    
     //-----PARCHE FEO :V -- por alguna razón los métodos anteriores dan null cuando deberían dar 0
     if (x == null) {
       x = 0;
@@ -71,56 +105,150 @@ public class IUTableroController implements Initializable {
       y = 0;
     }
     
-    control.agregarPosición(y, x, turno);
+    String ganador = control.agregarPosición(y, x, turno);
     
-    if (turno) {
-      ficha.setImage(new Image("/recursos/iconos/conejo.png"));
+    if (!ganador.equals("@")) {
+      mostrarGanador(ganador);
+    } else if (turno) {
+      ficha.setImage(new Image(FICHA_CONEJO));
+      cambiarDatosTurno(turno);
       turno = false;
     } else {
-      ficha.setImage(new Image ("/recursos/iconos/dinosaurio.png"));
-            turno = true;
-        }
-        
-        ficha.setDisable(true);
+      ficha.setImage(new Image(FICHA_DINOSAURIO));
+      cambiarDatosTurno(turno);
+      turno = true;
     }
-    
-    @FXML
-    public void efectoMouseSobre(MouseEvent event) {
-        ImageView ficha = (ImageView) event.getSource();
-        if (!ficha.isDisable()) {
-            if (turno) {
-                ficha.setImage(new Image("/recursos/iconos/conejo_transparente.png"));
-            } else {
-                ficha.setImage(new Image("/recursos/iconos/dinosaurio_transparente.png"));
-            }
-        }
+    RELOJ_TURNO = LIMITE_TURNO;
+    ficha.setDisable(true);
+  }
 
+  @FXML
+  public void efectoMouseSobre(MouseEvent event) {
+    ImageView ficha = (ImageView) event.getSource();
+    if (!ficha.isDisable()) {
+      if (turno) {
+        ficha.setImage(new Image(FICHA_CONEJO_TRANSPARENTE));
+      } else {
+        ficha.setImage(new Image(FICHA_DINOSAURIO_TRANSPARENTE));
+      }
     }
-    
-    @FXML
-    public void efectoMouseFuera(MouseEvent event){  
-        ImageView ficha = (ImageView) event.getSource();
-        if (!ficha.isDisable()) {
-            ficha.setImage(null);
+
+  }
+
+  @FXML
+  public void efectoMouseFuera(MouseEvent event) {
+    ImageView ficha = (ImageView) event.getSource();
+    if (!ficha.isDisable()) {
+      ficha.setImage(null);
+    }
+  }
+
+  public void iniciarCronometro() {
+    cronometro = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        if (RELOJ_TURNO > 9) {
+          lbTiempo.setText("00:" + RELOJ_TURNO);
+        } else if(RELOJ_TURNO > 0){
+          lbTiempo.setText("00:0" + RELOJ_TURNO);
+          lbTiempo.setTextFill(Color.web("#EC7063"));
+        } else {
+          cambiarDatosTurno(turno);
+          Mensajes.showNotification("Se acabo el tiempo", "Perdiste tu turno", Pos.CENTER);
+          turno = !turno;
+          RELOJ_TURNO = LIMITE_TURNO + 1;
         }
+        RELOJ_TURNO--;
+      }
+    }));
+
+    cronometro.setCycleCount(Timeline.INDEFINITE);
+    cronometro.play();
+  }
+  
+  public void reiniciarTablero(){
+    
+  }
+  
+  public void reproducirSonido(String musicFile) {
+    Media sound = null;
+    try {
+      sound = new Media(new File(musicFile).toURI().toURL().toExternalForm());
+    } catch (MalformedURLException ex) {
+      Logger.getLogger(IUTableroController.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    MediaPlayer mediaPlayer = new MediaPlayer(sound);
+    mediaPlayer.play();
+  }
+  
+  /**
+   * Si el turno es verdadero cambia la imagen a dinosaurio, de lo contrario la cambia a conejo.
+   * @param turno 
+   */
+  public void cambiarDatosTurno(boolean turno){
+    if (turno) {
+      imageTurno.setImage(new Image(FICHA_DINOSAURIO));
+    } else {
+      imageTurno.setImage(new Image(FICHA_CONEJO));
+    }
+    if (tfTurno.getText().equals(jugador1)) {
+      tfTurno.setText(jugadorPC);
+    } else {
+      tfTurno.setText(jugador1);
+    }
+  }
+  
+  public void rendirse(boolean turno){
+    if (turno) {
+      mostrarGanador("Dinosaurio");
+    } else {
+      mostrarGanador("Dinosaurio");
+    }
+  }
+  
+  public void mostrarGanador(String ganador) {
+    if (ganador.equals(fichaUsuario)) {
+      Mensajes.displayConfirmationAlert("Fin del juego", "El ganador es: " + jugador1);
+    }else{
+      Mensajes.displayConfirmationAlert("Fin del juego", "El ganador es: " + jugadorPC);
     }
     
-    public void iniciarCronometro() {
-        Timeline fiveSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if (DURACION_TURNO > 9) {
-                    lbTiempo.setText("00:"+DURACION_TURNO);
-                } else {
-                   lbTiempo.setText("00:0"+DURACION_TURNO); 
-                   lbTiempo.setTextFill(Color.web("#EC7063"));
-                }                
-                DURACION_TURNO--; 
-            }
-        }));
-        
-        fiveSecondsWonder.setCycleCount(DURACION_TURNO+1);
-        fiveSecondsWonder.play();
+    cronometro.stop();
+    //reiniciarTablero();
+    Stage stage = (Stage) tfTurno.getScene().getWindow();
+    stage.close();
+  }
+
+  public String getFichaUsuario() {
+    return fichaUsuario;
+  }
+
+  public void setFichaUsuario(String fichaUsuario) {
+    this.fichaUsuario = fichaUsuario;
+  }
+
+  public String getJugador1() {
+    return jugador1;
+  }
+
+  public void setJugador1(String jugador1) {
+    this.jugador1 = jugador1;
+  }
+
+  /**
+   * Muestra la ventana asociada a un loader. 
+   * @param loader FXMLLloader del cual se quiere mostrar la ventana.
+   */
+  public void abrirTablero(FXMLLoader loader){
+    try {
+      Stage stagePrincipal = new Stage();
+      Parent root = (Parent) loader.load();
+      Scene scene = new Scene(root);
+      stagePrincipal.setScene(scene);
+      stagePrincipal.setResizable(false);
+      stagePrincipal.show();
+    } catch (IOException ex) {
+      Logger.getLogger(IUTableroController.class.getName()).log(Level.SEVERE, null, ex);
     }
-    
+  }
 }

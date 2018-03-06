@@ -32,7 +32,7 @@ public class CincoEnLinea extends Application {
     
     public void showMainWindows() {
         AnchorPane rootPane = new AnchorPane();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/presentacion/IUTablero.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/presentacion/IUBando.fxml"));
 
         try {
             rootPane = loader.load();

@@ -5,34 +5,37 @@ package logica;
  * @author Alan Yoset García C
  */
 public class ControlTablero {
-    char conejo = 'c';
-    char dinosaurio = 'd'; 
-    char [][] tablero = new char [10][10]; 
-    int LONGITUD_TABLERO = 10;
-    
-    public void bloquearCelda(int x, int y){
-        
+
+  char conejo = 'c';
+  char dinosaurio = 'd';
+  char[][] tablero = new char[10][10];
+  int LONGITUD_TABLERO = 10;
+
+  public void bloquearCelda(int x, int y) {
+
+  }
+
+  public String agregarPosición(int x, int y, boolean turno) {
+    String ganador;
+    if (turno) {
+      tablero[x][y] = conejo;
+      ganador = "Conejo";
+    } else {
+      tablero[x][y] = dinosaurio;
+      ganador = "Dinosaurio";
     }
-    
-    public void agregarPosición(int x, int y, boolean turno){
-      String ganador;
-      if (turno) {
-        tablero[x][y] = conejo;
-        ganador = "conejo";
-      } else {
-        tablero[x][y] = dinosaurio;
-        ganador = "dinosaurio";
-      }
-      
-      boolean ganadorHorizontal = comprobarPosiciónHorizontal(x);
-      boolean ganadorVertical = comprobarPosiciónVertical(y);
-      boolean ganadorDiagonalDerecha = comprobarPosicionDiagonalDerecha(x, y);
-      boolean ganadorDiagonalIzquierda = comprobarPosicionDiagonalIzquierda(x, y);
-      
-      if (ganadorHorizontal || ganadorVertical || ganadorDiagonalDerecha || ganadorDiagonalIzquierda) {
-        System.out.println("GANASTE LA PARTIDA " + ganador);
-      }
+
+    boolean ganadorHorizontal = comprobarPosiciónHorizontal(x);
+    boolean ganadorVertical = comprobarPosiciónVertical(y);
+    boolean ganadorDiagonalDerecha = comprobarPosicionDiagonalDerecha(x, y);
+    boolean ganadorDiagonalIzquierda = comprobarPosicionDiagonalIzquierda(x, y);
+
+    if (ganadorHorizontal || ganadorVertical || ganadorDiagonalDerecha || ganadorDiagonalIzquierda) {
+      return ganador; 
+    } else {
+      return "@"; 
     }
+  }
 
   public boolean comprobarPosiciónHorizontal(int x) {
     boolean ganador = false;
@@ -48,7 +51,7 @@ public class ControlTablero {
       } else {
         contadorConejos = 0;
       }
-        
+
       if (tablero[x][i] == dinosaurio) {
         contadorDinosaurios++;
         if (contadorDinosaurios == 5) {
@@ -58,7 +61,7 @@ public class ControlTablero {
         contadorDinosaurios = 0;
       }
     }
-    
+
     return ganador;
   }
 
@@ -76,7 +79,7 @@ public class ControlTablero {
       } else {
         contadorConejos = 0;
       }
-        
+
       if (tablero[i][y] == dinosaurio) {
         contadorDinosaurios++;
         if (contadorDinosaurios == 5) {
@@ -86,22 +89,22 @@ public class ControlTablero {
         contadorDinosaurios = 0;
       }
     }
-    
+
     return ganador;
   }
-  
-  public boolean comprobarPosicionDiagonalDerecha(int x, int y){
+
+  public boolean comprobarPosicionDiagonalDerecha(int x, int y) {
     boolean ganador = false;
     int contadorConejos = 0;
     int contadorDinosaurios = 0;
-    
-    while(x != 0 && y != 0) {
+
+    while (x != 0 && y != 0) {
       x--;
       y--;
     }
-    
+
     while (x < 10 && y < 10) {
- 
+
       if (tablero[x][y] == conejo) {
         contadorConejos++;
         if (contadorConejos == 5) {
@@ -125,13 +128,13 @@ public class ControlTablero {
     }
     return ganador;
   }
-  
-  public boolean comprobarPosicionDiagonalIzquierda(int x, int y){
+
+  public boolean comprobarPosicionDiagonalIzquierda(int x, int y) {
     boolean ganador = false;
     int contadorConejos = 0;
     int contadorDinosaurios = 0;
-    
-    while(y < 9 && x > 0) {
+
+    while (y < 9 && x > 0) {
       x--;
       y++;
     }
