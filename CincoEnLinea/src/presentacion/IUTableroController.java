@@ -52,8 +52,8 @@ public class IUTableroController implements Initializable {
   @FXML
   private Hyperlink hpRendirse;
 
-  private int RELOJ_TURNO = 5;
-  private final int LIMITE_TURNO = 5; 
+  private int RELOJ_TURNO = 15;
+  private final int LIMITE_TURNO = 15; 
 
   private final String SONIDO_FIN_TURNO = "../recursos/sonidos/timer_3beeps.mp3";
   private final String FICHA_CONEJO = "/recursos/iconos/conejo.png";
@@ -207,13 +207,12 @@ public class IUTableroController implements Initializable {
   }
   
   public void mostrarGanador(String ganador) {
+    cronometro.stop();
     if (ganador.equals(fichaUsuario)) {
       Mensajes.displayConfirmationAlert("Fin del juego", "El ganador es: " + jugador1);
     }else{
       Mensajes.displayConfirmationAlert("Fin del juego", "El ganador es: " + jugadorPC);
     }
-    
-    cronometro.stop();
     //reiniciarTablero();
     Stage stage = (Stage) tfTurno.getScene().getWindow();
     stage.close();
