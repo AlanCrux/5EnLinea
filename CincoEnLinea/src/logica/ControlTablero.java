@@ -29,9 +29,12 @@ public class ControlTablero {
     boolean ganadorVertical = comprobarPosiciónVertical(y);
     boolean ganadorDiagonalDerecha = comprobarPosicionDiagonalDerecha(x, y);
     boolean ganadorDiagonalIzquierda = comprobarPosicionDiagonalIzquierda(x, y);
+    boolean hayEmpate = comprobarMatrizVacía();
 
-    if (ganadorHorizontal || ganadorVertical || ganadorDiagonalDerecha || ganadorDiagonalIzquierda) {
+    if ((ganadorHorizontal || ganadorVertical || ganadorDiagonalDerecha || ganadorDiagonalIzquierda) && !hayEmpate) {
       return ganador; 
+    } else  if (hayEmpate) {
+      return "empate";
     } else {
       return "@"; 
     }
@@ -162,5 +165,18 @@ public class ControlTablero {
       y--;
     }
     return ganador;
+  }
+  
+  public boolean comprobarMatrizVacía(){
+    boolean vacío = true;
+    
+    for (int i = 0; i < LONGITUD_TABLERO; i++) {
+      for (int j = 0; j < LONGITUD_TABLERO; j++) {
+        if (!Character.isAlphabetic(tablero[i][j])) {
+          vacío = false;
+        }
+      }
+    }
+    return vacío;
   }
 }

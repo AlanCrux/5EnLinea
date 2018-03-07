@@ -24,7 +24,7 @@ import org.controlsfx.control.Notifications;
  */
 public class Mensajes {
 
-  private static final String BUTTONACEPT = "buttonAccept"; 
+  private static final String BUTTONACCEPT = "buttonAccept"; 
   
   private Mensajes() {
   

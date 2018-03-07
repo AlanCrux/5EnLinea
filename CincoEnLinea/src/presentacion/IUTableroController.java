@@ -31,6 +31,11 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import presentacion.utilerias.Mensajes;
 
 /**
@@ -55,7 +60,7 @@ public class IUTableroController implements Initializable {
   private int RELOJ_TURNO = 15;
   private final int LIMITE_TURNO = 15; 
 
-  private final String SONIDO_FIN_TURNO = "../recursos/sonidos/timer_3beeps.mp3";
+  private final String SONIDO_FIN_TURNO = "/recursos/sonidos/timer_3beeps.mp3";
   private final String FICHA_CONEJO = "/recursos/iconos/conejo.png";
   private final String FICHA_DINOSAURIO = "/recursos/iconos/dinosaurio.png";
   private final String FICHA_CONEJO_TRANSPARENTE = "/recursos/iconos/conejo_transparente.png";
@@ -77,6 +82,7 @@ public class IUTableroController implements Initializable {
    */
   @Override
   public void initialize(URL url, ResourceBundle rb) {
+        
     turno = fichaUsuario.equals("Conejo"); //Si es conejo el turno va a iniciar como true
     if (turno) {
       imageTurno.setImage(new Image(FICHA_CONEJO));
@@ -97,7 +103,6 @@ public class IUTableroController implements Initializable {
     Integer x = GridPane.getColumnIndex(ficha);
     Integer y = GridPane.getRowIndex(ficha);
     
-    //-----PARCHE FEO :V -- por alguna razón los métodos anteriores dan null cuando deberían dar 0
     if (x == null) {
       x = 0;
     }
@@ -105,23 +110,33 @@ public class IUTableroController implements Initializable {
       y = 0;
     }
     
-    String ganador = control.agregarPosición(y, x, turno);
+    String estatusTablero = control.agregarPosición(y, x, turno);
     
-    if (!ganador.equals("@")) {
-      mostrarGanador(ganador);
-    } else if (turno) {
-      ficha.setImage(new Image(FICHA_CONEJO));
-      cambiarDatosTurno(turno);
-      turno = false;
-    } else {
-      ficha.setImage(new Image(FICHA_DINOSAURIO));
-      cambiarDatosTurno(turno);
-      turno = true;
+    switch(estatusTablero){
+      case "Conejo":
+      case "Dinosaurio":
+        mostrarGanador(estatusTablero);
+        break;
+      case "empate":
+        Mensajes.displayConfirmationAlert("Fin del juego", "¡Empate!");
+        break;
+      default:
+ 
+        if (turno) {
+          ficha.setImage(new Image(FICHA_CONEJO));
+          cambiarDatosTurno(turno);
+          turno = false;
+        } else {
+          ficha.setImage(new Image(FICHA_DINOSAURIO));
+          cambiarDatosTurno(turno);
+          turno = true;
+        }
+        RELOJ_TURNO = LIMITE_TURNO;
+        ficha.setDisable(true);
     }
-    RELOJ_TURNO = LIMITE_TURNO;
-    ficha.setDisable(true);
-  }
 
+  }
+  
   @FXML
   public void efectoMouseSobre(MouseEvent event) {
     ImageView ficha = (ImageView) event.getSource();
@@ -171,7 +186,26 @@ public class IUTableroController implements Initializable {
     
   }
   
-  public void reproducirSonido(String musicFile) {
+  public void reproducirSonido(){
+     try {
+         // Open an audio input stream.
+         URL url = this.getClass().getClassLoader().getResource(SONIDO_FIN_TURNO);
+         AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+         // Get a sound clip resource.
+         Clip clip = AudioSystem.getClip();
+         // Open audio clip and load samples from the audio input stream.
+         clip.open(audioIn);
+         clip.start();
+      } catch (UnsupportedAudioFileException e) {
+         e.printStackTrace();
+      } catch (IOException e) {
+         e.printStackTrace();
+      } catch (LineUnavailableException e) {
+         e.printStackTrace();
+      }
+  }
+  
+  /*public void reproducirSonido(String musicFile) {
     Media sound = null;
     try {
       sound = new Media(new File(musicFile).toURI().toURL().toExternalForm());
@@ -180,7 +214,7 @@ public class IUTableroController implements Initializable {
     }
     MediaPlayer mediaPlayer = new MediaPlayer(sound);
     mediaPlayer.play();
-  }
+  }*/
   
   /**
    * Si el turno es verdadero cambia la imagen a dinosaurio, de lo contrario la cambia a conejo.
