@@ -11,8 +11,16 @@ public class ControlTablero {
   char[][] tablero = new char[10][10];
   int LONGITUD_TABLERO = 10;
 
+    public void setTablero(char[][] tablero) {
+        this.tablero = tablero;
+    }
+
   public void bloquearCelda(int x, int y) {
 
+  }
+  
+  public void invocarAgente(Agente agente){
+      agente.setTablero(tablero);
   }
 
   public String agregarPosición(int x, int y, boolean turno) {
