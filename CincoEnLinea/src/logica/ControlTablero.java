@@ -6,185 +6,166 @@ package logica;
  */
 public class ControlTablero {
 
-  char conejo = 'c';
-  char dinosaurio = 'd';
-  char[][] tablero = new char[10][10];
-  int LONGITUD_TABLERO = 10;
+    String bando;
+    char caracterUsuario;
+    char caracterAgente;
+    char conejo = 'c';
+    char dinosaurio = 'd';
+    char[][] tablero = new char[10][10];
+    int LONGITUD_TABLERO = 10;
 
     public void setTablero(char[][] tablero) {
         this.tablero = tablero;
     }
 
-  public void bloquearCelda(int x, int y) {
-
-  }
-  
-  public void invocarAgente(Agente agente){
-      agente.setTablero(tablero);
-  }
-
-  public String agregarPosición(int x, int y, boolean turno) {
-    String ganador;
-    if (turno) {
-      tablero[x][y] = conejo;
-      ganador = "Conejo";
-    } else {
-      tablero[x][y] = dinosaurio;
-      ganador = "Dinosaurio";
+    public void setBando(String bando) {
+        this.bando = bando;
+        if (bando.equals("Conejo")) {
+            caracterAgente = 'd';
+            caracterUsuario = 'c';
+        } else {
+            caracterAgente = 'c';
+            caracterUsuario = 'd';
+        }
     }
 
-    boolean ganadorHorizontal = comprobarPosiciónHorizontal(x);
-    boolean ganadorVertical = comprobarPosiciónVertical(y);
-    boolean ganadorDiagonalDerecha = comprobarPosicionDiagonalDerecha(x, y);
-    boolean ganadorDiagonalIzquierda = comprobarPosicionDiagonalIzquierda(x, y);
-    boolean hayEmpate = comprobarMatrizVacía();
-
-    if ((ganadorHorizontal || ganadorVertical || ganadorDiagonalDerecha || ganadorDiagonalIzquierda) && !hayEmpate) {
-      return ganador; 
-    } else  if (hayEmpate) {
-      return "empate";
-    } else {
-      return "@"; 
-    }
-  }
-
-  public boolean comprobarPosiciónHorizontal(int x) {
-    boolean ganador = false;
-    int contadorConejos = 0;
-    int contadorDinosaurios = 0;
-
-    for (int i = 0; i < LONGITUD_TABLERO; i++) {
-      if (tablero[x][i] == conejo) {
-        contadorConejos++;
-        if (contadorConejos == 5) {
-          ganador = true;
-        }
-      } else {
-        contadorConejos = 0;
-      }
-
-      if (tablero[x][i] == dinosaurio) {
-        contadorDinosaurios++;
-        if (contadorDinosaurios == 5) {
-          ganador = true;
-        }
-      } else {
-        contadorDinosaurios = 0;
-      }
+    public char[][] getTablero() {
+        return tablero;
     }
 
-    return ganador;
-  }
+    public void bloquearCelda(int x, int y) {
 
-  public boolean comprobarPosiciónVertical(int y) {
-    boolean ganador = false;
-    int contadorConejos = 0;
-    int contadorDinosaurios = 0;
-
-    for (int i = 0; i < LONGITUD_TABLERO; i++) {
-      if (tablero[i][y] == conejo) {
-        contadorConejos++;
-        if (contadorConejos == 5) {
-          ganador = true;
-        }
-      } else {
-        contadorConejos = 0;
-      }
-
-      if (tablero[i][y] == dinosaurio) {
-        contadorDinosaurios++;
-        if (contadorDinosaurios == 5) {
-          ganador = true;
-        }
-      } else {
-        contadorDinosaurios = 0;
-      }
     }
 
-    return ganador;
-  }
+    public String agregarPosición(int x, int y, boolean turno) {
+        String ganador;
+        if (turno) {
+            tablero[x][y] = conejo;
+            ganador = "Conejo";
+        } else {
+            tablero[x][y] = dinosaurio;
+            ganador = "Dinosaurio";
+        }
 
-  public boolean comprobarPosicionDiagonalDerecha(int x, int y) {
-    boolean ganador = false;
-    int contadorConejos = 0;
-    int contadorDinosaurios = 0;
+        boolean ganadorHorizontal = comprobarPosiciónHorizontal(x);
+        boolean ganadorVertical = comprobarPosiciónVertical(y);
+        boolean ganadorDiagonalDerecha = comprobarPosicionDiagonalDerecha(x, y);
+        boolean ganadorDiagonalIzquierda = comprobarPosicionDiagonalIzquierda(x, y);
+        boolean hayEmpate = comprobarMatrizVacía();
 
-    while (x != 0 && y != 0) {
-      x--;
-      y--;
+        if ((ganadorHorizontal || ganadorVertical || ganadorDiagonalDerecha || ganadorDiagonalIzquierda) && !hayEmpate) {
+            return ganador;
+        } else if (hayEmpate) {
+            return "empate";
+        } else {
+            return "@";
+        }
     }
 
-    while (x < 10 && y < 10) {
+    public boolean comprobarPosiciónHorizontal(int x) {
+        
+        boolean ganador = false;
+        int contador = 0;
 
-      if (tablero[x][y] == conejo) {
-        contadorConejos++;
-        if (contadorConejos == 5) {
-          ganador = true;
+        for (int i = 0; i < LONGITUD_TABLERO; i++) {
+            if (tablero[x][i] == caracterUsuario) {
+                contador++;
+                if (contador == 5) {
+                    ganador = true;
+                }
+            } else {
+                contador = 0;
+            }
         }
-      } else {
-        contadorConejos = 0;
-      }
-
-      if (tablero[x][y] == dinosaurio) {
-        contadorDinosaurios++;
-        if (contadorDinosaurios == 5) {
-          ganador = true;
-        }
-      } else {
-        contadorDinosaurios = 0;
-      }
-
-      x++;
-      y++;
-    }
-    return ganador;
-  }
-
-  public boolean comprobarPosicionDiagonalIzquierda(int x, int y) {
-    boolean ganador = false;
-    int contadorConejos = 0;
-    int contadorDinosaurios = 0;
-
-    while (y < 9 && x > 0) {
-      x--;
-      y++;
+        return ganador;
     }
 
-    while (x < 10 && y >= 0) {
-      if (tablero[x][y] == conejo) {
-        contadorConejos++;
-        if (contadorConejos == 5) {
-          ganador = true;
-        }
-      } else {
-        contadorConejos = 0;
-      }
+    public boolean comprobarPosiciónVertical(int y) {
+        boolean ganador = false;
+        int contador = 0;
 
-      if (tablero[x][y] == dinosaurio) {
-        contadorDinosaurios++;
-        if (contadorDinosaurios == 5) {
-          ganador = true;
+        for (int i = 0; i < LONGITUD_TABLERO; i++) {
+            if (tablero[i][y] == caracterUsuario) {
+                contador++;
+                if (contador == 5) {
+                    ganador = true;
+                }
+            } else {
+                contador = 0;
+            }
         }
-      } else {
-        contadorDinosaurios = 0;
-      }
 
-      x++;
-      y--;
+        return ganador;
     }
-    return ganador;
-  }
-  
-  public boolean comprobarMatrizVacía(){
-    boolean vacío = true;
+
+    public boolean comprobarPosicionDiagonalDerecha(int x, int y) {
+        boolean ganador = false;
+        int contador = 0;
+
+        while (x != 0 && y != 0) {
+            x--;
+            y--;
+        }
+
+        while (x < 10 && y < 10) {
+
+            if (tablero[x][y] == caracterUsuario) {
+                contador++;
+                if (contador == 5) {
+                    ganador = true;
+                }
+            } else {
+                contador = 0;
+            }
+
+            x++;
+            y++;
+        }
+        return ganador;
+    }
+
+    public boolean comprobarPosicionDiagonalIzquierda(int x, int y) {
+        boolean ganador = false;
+        int contador = 0;
+
+        while (y < 9 && x > 0) {
+            x--;
+            y++;
+        }
+
+        while (x < 10 && y >= 0) {
+            if (tablero[x][y] == caracterUsuario) {
+                contador++;
+                if (contador == 5) {
+                    ganador = true;
+                }
+            } else {
+                contador = 0;
+            }
+
+            x++;
+            y--;
+        }
+        return ganador;
+    }
+
+    public boolean comprobarMatrizVacía() {
+        boolean vacío = true;
+
+        for (int i = 0; i < LONGITUD_TABLERO; i++) {
+            for (int j = 0; j < LONGITUD_TABLERO; j++) {
+                if (!Character.isAlphabetic(tablero[i][j])) {
+                    vacío = false;
+                }
+            }
+        }
+        return vacío;
+    }
     
-    for (int i = 0; i < LONGITUD_TABLERO; i++) {
-      for (int j = 0; j < LONGITUD_TABLERO; j++) {
-        if (!Character.isAlphabetic(tablero[i][j])) {
-          vacío = false;
+    public void agregarFichaAgente(Coordenada coordenada){
+        int x = coordenada.getX();
+        int y = coordenada.getY();
+        
+        tablero[x][y] = caracterAgente;
         }
-      }
-    }
-    return vacío;
-  }
 }

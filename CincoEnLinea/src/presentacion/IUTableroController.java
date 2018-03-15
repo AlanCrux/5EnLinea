@@ -27,6 +27,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import logica.Agente;
+import logica.Coordenada;
 import presentacion.utilerias.Mensajes;
 
 /**
@@ -83,12 +84,14 @@ public class IUTableroController implements Initializable {
         turno = fichaUsuario.equals("Conejo"); //Si es conejo el turno va a iniciar como true
         if (turno) {
             imageTurno.setImage(new Image(FICHA_CONEJO));
+            control.setBando("Conejo");
             agente.setBando("Dinosaurio");
         } else {
             imageTurno.setImage(new Image(FICHA_DINOSAURIO));
+            control.setBando("Dinosaurio");
             agente.setBando("Conejo");
         }
-        iniciarCronometro();
+        //iniciarCronometro();
         tfTurno.setText(jugador1);
         hpRendirse.setOnAction(event -> {
             rendirse(turno);
@@ -122,8 +125,8 @@ public class IUTableroController implements Initializable {
             default:
                 cambiarTurno(ficha);
         }
-        System.out.println("Invocar agente de IA");
-        ponerFichaAgente();
+
+        ponerFichaAgente(y, x);
     }
 
     public void cambiarTurno(ImageView ficha) {
@@ -140,13 +143,42 @@ public class IUTableroController implements Initializable {
         ficha.setDisable(true);
     }
 
-    public void ponerFichaAgente() {
+    public void ponerFichaAgente(int x, int y) {
 
-        control.invocarAgente(agente);
-        int filas = 0;
-        int columnas = 9; 
-        int valorAObtener = filas+columnas;
-        ImageView ficha = (ImageView) gridTablero.getChildren().get(valorAObtener);
+        char[][] tablero;
+        tablero = control.getTablero();
+        Coordenada coordenadaDeTiro = null;
+        boolean flag = false;
+        ImageView ficha;
+
+        agente.setTablero(tablero);
+
+        if (agente.esPrimerTiro()) {
+            System.out.println("es primer tiro!");
+        } else {
+            coordenadaDeTiro = agente.buscarConsecutivos(x, y);
+            if (coordenadaDeTiro.getX() != -1) {
+                flag = true;
+            } else {
+                coordenadaDeTiro = agente.buscarEstrategia();
+                if (coordenadaDeTiro.getX() != -1) {
+                    flag = true;
+                }
+            }
+        }
+
+        if (flag) {
+            control.agregarFichaAgente(coordenadaDeTiro);
+
+            int filas = coordenadaDeTiro.getX();
+            int columnas = coordenadaDeTiro.getY();
+            int lugarFicha = Integer.parseInt(Integer.toString(filas) + Integer.toString(columnas));
+
+            ficha = (ImageView) gridTablero.getChildren().get(lugarFicha);
+        } else {
+            ficha = (ImageView) gridTablero.getChildren().get(1);
+        }
+
         cambiarTurno(ficha);
     }
 
